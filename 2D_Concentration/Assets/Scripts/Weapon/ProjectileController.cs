@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class ProjectileController : MonoBehaviour
+public class ProjectileController : MonoBehaviour,IPoolable
 {
     [SerializeField] private LayerMask levelCollisionLayer;
     private RangeWeaponHandler rangeWeaponHandler;
@@ -18,6 +19,8 @@ public class ProjectileController : MonoBehaviour
     public bool fxOnDestroy = true;
 
     ProjectileManager projectileManager;
+
+    private Action<GameObject> returnToPool;
 
 
     private void Awake()
@@ -98,7 +101,23 @@ public class ProjectileController : MonoBehaviour
         }
 
 
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        OnDespawn();
+    }
+
+    public void Initialize(Action<GameObject> returnAction)
+    {
+        returnToPool = returnAction;
+    }
+
+    public void OnSpawn()
+    {
+        
+    }
+
+    public void OnDespawn()
+    {
+        returnToPool?.Invoke(gameObject);
     }
 
 }

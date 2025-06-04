@@ -68,7 +68,7 @@ public class BaseController : MonoBehaviour
 
     private void Movement(Vector2 direction)
     {
-        direction = direction * stathandler.Speed;
+        direction = direction * stathandler.GetStat(StatType.Speed);
         if (KnockbackDuration > 0.0f)
         {
             direction *= 0.2f;
