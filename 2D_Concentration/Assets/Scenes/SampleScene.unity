@@ -562,6 +562,9 @@ MonoBehaviour:
   gizmoColor: {r: 1, g: 0, b: 0, a: 0.3}
   timeBetweenSpawns: 0.2
   timeBetweenWaves: 1
+  itemPrefabs:
+  - {fileID: 7617005982343224079, guid: a43c349997c59434a920d1a701c897e2, type: 3}
+  - {fileID: 4656677971226350295, guid: 4b8e4ad68916faf42977e642e5dd5e47, type: 3}
 --- !u!4 &218309778
 Transform:
   m_ObjectHideFlags: 0
@@ -3031,6 +3034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1200728633}
   - component: {fileID: 1200728632}
+  - component: {fileID: 1200728634}
   m_Layer: 0
   m_Name: ProjectileManager
   m_TagString: Untagged
@@ -3070,6 +3074,21 @@ Transform:
   - {fileID: 1983545541}
   m_Father: {fileID: 1553871021}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1200728634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200728631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c95e2343153bacc4a921c75a51fb49c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 1971373128251137103, guid: da11cb39ff833634e98f756bdfe70fb5, type: 3}
+  - {fileID: 8209078673400919598, guid: 3c91805cb31cafc43802529a090f8bf2, type: 3}
 --- !u!1 &1297882799
 GameObject:
   m_ObjectHideFlags: 0
@@ -15372,8 +15391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f22bca3e501774cad17d1624ad8209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  speed: 3
+  statData: {fileID: 11400000, guid: 425bcbcb55f3a0e49b095e48112ed084, type: 2}
 --- !u!114 &1852029828
 MonoBehaviour:
   m_ObjectHideFlags: 0
