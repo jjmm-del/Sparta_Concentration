@@ -19,13 +19,14 @@ public class UIStatus : MonoBehaviour
     private void Awake()
     {
         //초기화
-        gameObject.SetActive(false);
+        
         
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.SetActive(false);
+        BackButton.onClick.AddListener(UIManager.Instance.OpenMainMenu);
     }
 
     // Update is called once per frame
@@ -34,10 +35,6 @@ public class UIStatus : MonoBehaviour
         
     }
 
-    void OnClickBackButton()
-    {
-        gameObject.SetActive(false);
-        
-    }
+    
     
 }

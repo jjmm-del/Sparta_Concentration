@@ -17,12 +17,14 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ExpText;
     [SerializeField] private Image ExpGauge;
 
-    [Header("Status,InventoryButton")] [SerializeField]
-    private Button InventoryButton;
+    [Header("Status,InventoryButton")]
+    [SerializeField] private Button InventoryButton;
     [SerializeField] private Button StatusButton;
 
+    
     private void Awake()
     {
+        
         //데이터 초기화
         //GoldText.text = GameManager.Instance.Player.currentMoney.Tostring();
         //GoldText.text = GameManager.Instance.Player.title;
@@ -37,4 +39,13 @@ public class UIMainMenu : MonoBehaviour
         //상태를 계속 업데이트?
     }
 
+    private void Start()
+    {
+        InventoryButton.onClick.AddListener(UIManager.Instance.OpenInventory);
+        StatusButton.onClick.AddListener(UIManager.Instance.OpenStatus);
+    }
+    
+
+    
+    
 }
