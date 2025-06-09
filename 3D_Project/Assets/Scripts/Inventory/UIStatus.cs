@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class UIStatus : MonoBehaviour
 {
-    [SerializeField] private Image AttackIcon;
     [SerializeField] private TextMeshProUGUI AttackText;
-    [SerializeField] private Image DefenseIcon;
     [SerializeField] private TextMeshProUGUI DefenseText;
-    [SerializeField] private Image HealthIcon;
     [SerializeField] private TextMeshProUGUI HealthText;
-    [SerializeField] private Image CriticalIcon;
     [SerializeField] private TextMeshProUGUI CriticalText;
+    [SerializeField] private Image AttackIcon;
+    [SerializeField] private Image DefenseIcon;
+    [SerializeField] private Image HealthIcon;
+    [SerializeField] private Image CriticalIcon;
     [SerializeField] private Button BackButton;
 
     private void Awake()
@@ -32,7 +32,10 @@ public class UIStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        AttackText.text = GameManager.Instance.PlayerAttack.ToString();
+        DefenseText.text = GameManager.Instance.PlayerDefense.ToString();
+        HealthText.text = GameManager.Instance.PlayerHealth.ToString();
+        CriticalText.text = GameManager.Instance.PlayerCriticalChance.ToString();
     }
 
     
