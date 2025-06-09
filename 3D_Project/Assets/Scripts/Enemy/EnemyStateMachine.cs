@@ -13,6 +13,8 @@ public class EnemyStateMachine : StateMachine
     public float MovementSpeedModifier { get; set; }
     
     public GameObject Target { get; private set; }
+    
+    public EnemyIdleState IdleState { get; }
     public EnemyChasingState ChasingState { get; }
     public EnemyAttackState Attackstate { get; }
 
@@ -21,6 +23,7 @@ public class EnemyStateMachine : StateMachine
         this.Enemy = enemy;
         Target = GameObject.FindGameObjectWithTag("Player");
 
+        IdleState = new EnemyIdleState(this);
         ChasingState = new EnemyChasingState(this);
         Attackstate = new EnemyAttackState(this);
     }

@@ -6,9 +6,9 @@ public class EnemyBaseState : IState
 {
     protected EnemyStateMachine stateMachine;
     //protected readonly PlayerGroundData groundData;
-    public EnemyBaseState(EnemyStateMachine playerStateMachine)
+    public EnemyBaseState(EnemyStateMachine stateMachine)
     {
-        stateMachine = playerStateMachine;
+        stateMachine = stateMachine;
         //
     }
     
