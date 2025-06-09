@@ -32,12 +32,40 @@ public class UIStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AttackText.text = GameManager.Instance.PlayerAttack.ToString();
-        DefenseText.text = GameManager.Instance.PlayerDefense.ToString();
-        HealthText.text = GameManager.Instance.PlayerHealth.ToString();
-        CriticalText.text = GameManager.Instance.PlayerCriticalChance.ToString();
+        AttackText.text = AttackStat();
+        DefenseText.text = DefenseStat();
+        HealthText.text = HealthStat();
+        CriticalText.text = CriticalStat();
     }
 
+    string AttackStat()
+    {
+        string _attackText;
+        int currentAttack = GameManager.Instance.PlayerAttack; // + WeaponAttack  이걸 어디서 관리하까
+        _attackText = $"Attack \n {currentAttack}";
+        return _attackText;
+    }
+    string DefenseStat()
+    {
+        string _defenseText;
+        int _currentDefense = GameManager.Instance.PlayerDefense;
+        _defenseText = $"Defense \n {_currentDefense}";
+        return _defenseText;
+    }
+    string HealthStat()
+    {
+        string _healthText;
+        int _currentHealth = GameManager.Instance.PlayerHealth;
+        _healthText = $"Health \n {_currentHealth}";
+        return _healthText;
+    }
+    string CriticalStat()
+    {
+        string _criticalText;
+        int _currentCritical = GameManager.Instance.PlayerCriticalChance;
+        _criticalText = $"CriticalChance \n {_currentCritical}";
+        return _criticalText;
+    }
     
     
 }

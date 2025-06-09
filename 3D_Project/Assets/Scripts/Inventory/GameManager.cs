@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     public int PlayerHealth; 
     public int PlayerCriticalChance;
     public int PlayerLevel; 
-    public int PlayerExp;
+    public int PlayerCurrentExp;
+    public int PlayerMaxExp;
     public string PlayerTitle;
     public string PlayerDescription;
     public string PlayerName;
@@ -45,18 +46,20 @@ public class GameManager : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        Player = new Character();
+        
         SetData();
     }
     void SetData()
     {
+        Player = new Character();
         PlayerGold = Player.Gold;
         PlayerAttack = Player.Attack;
         PlayerDefense = Player.Defense;
         PlayerHealth = Player.Health;
         PlayerCriticalChance = Player.CriticalChance;
         PlayerLevel = Player.Level;
-        PlayerExp = Player.Exp;
+        PlayerCurrentExp = Player.CurrentExp;
+        PlayerMaxExp = Player.MaxExp;
         PlayerName = Player.Name;
         PlayerDescription = Player.Description;
         PlayerTitle = Player.Title;
