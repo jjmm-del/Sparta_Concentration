@@ -9,13 +9,13 @@ public class UIInventory : MonoBehaviour
 
     void Awake()
     {
-        gameObject.SetActive(false);
+        
         
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.SetActive(false);
         BackButton.onClick.AddListener(UIManager.Instance.OpenMainMenu);
     }
 
